@@ -8,14 +8,15 @@ const BanBidaModel = {
     return result.recordset;
   },
 
-  create: async ({ TenBan, GiaTheoGio, MoTa }) => {
+  create: async ({ TenBan, GiaTheoGio, MoTa, AnhURL }) => {
     const pool = await database.getPool();
     await pool
       .request()
       .input("TenBan", sql.NVarChar, TenBan)
       .input("GiaTheoGio", sql.Decimal(10, 2), GiaTheoGio)
       .input("MoTa", sql.NVarChar, MoTa)
-      .query("INSERT INTO BanBida (TenBan, GiaTheoGio, MoTa) VALUES (@TenBan, @GiaTheoGio, @MoTa)");
+      .input("AnhURL", sql.NVarChar, AnhURL)
+      .query("INSERT INTO BanBida (TenBan, GiaTheoGio, MoTa, AnhURL) VALUES (@TenBan, @GiaTheoGio, @MoTa, @AnhURL)");
   },
 
   updateTrangThai: async (MaBan, TrangThai) => {

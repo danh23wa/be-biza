@@ -11,8 +11,8 @@ const getAllBanBida = async (req, res, next) => {
 
  const addBanBida = async (req, res, next) => {
   try {
-    const { TenBan, GiaTheoGio, MoTa } = req.body;
-    await BanBidaModel.create({ TenBan, GiaTheoGio, MoTa });
+    const { TenBan, GiaTheoGio, MoTa, AnhURL } = req.body;
+    await BanBidaModel.create({ TenBan, GiaTheoGio, MoTa ,AnhURL });
     res.status(201).json({ message: "✅ Thêm bàn thành công" });
   } catch (err) {
     next(err);

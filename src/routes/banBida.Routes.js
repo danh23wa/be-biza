@@ -53,6 +53,9 @@ router.get("/", banBidaController.getAllBanBida);
  *               MoTa:
  *                 type: string
  *                 example: "Bàn VIP cao cấp"
+ *               AnhURL :
+ *                type: string
+ *                example: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnZCCdzD0asH_jg3ShERcZVi6YCm26My2PGg&s"
  *     responses:
  *       201:
  *         description: Thêm bàn thành công
